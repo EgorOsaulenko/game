@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог ігор</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Каталог ігор</h1>
+        <nav>
+            <a href="/">Головна</a>
+            <a href="/games">Каталог ігор</a>
+            <a href="/add-game">Додати гру</a>
+        </nav>
+    </header>
+    <main>
+        <div class="games-container">
+            {% for game in games %}
+            <div class="game-card">
+                <h2>{{ game.title }}</h2>
+                <p class="price">Ціна: {{ game.price }} грн</p>
+                <p class="description">{{ game.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>Магазин ігор &copy; 2024</footer>
+</body>
+</html>
